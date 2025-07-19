@@ -1,0 +1,28 @@
+resource_group_name = "WebApp3TierRG"
+location            = "East US"
+
+tags = {
+  environment = "dev"
+  owner       = "mark.joshua"
+}
+
+vnet_name         = "WebApp3Tier_Vnet"
+vnet_address_space = ["10.0.0.0/16"]
+
+subnets = {
+  "Bastion" = {
+    address_prefixes  = ["10.0.1.0/24"]
+  }
+  "ApplicationGatewaySubnet" = {
+    address_prefixes = ["10.0.2.0/24"]
+  }
+  "DBSubnet" = {
+    address_prefixes = ["10.0.3.0/24"]
+  }
+  "AppSubnet" = {
+    address_prefixes = ["10.0.4.0/24"]
+  }
+  "WebSubnet" = {
+    address_prefixes  = ["10.0.5.0/24"]
+  }
+}
