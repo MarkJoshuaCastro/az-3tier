@@ -74,6 +74,6 @@ jobs:
     - name: Terraform Plan
       run: terraform plan -var-file="terraform.tfvars"
 
-    - name: Terraform Apply (auto-approve)
+    - name: Terraform Destroy (auto-approve)
       if: github.ref == 'refs/heads/main'
-      run: terraform apply -auto-approve -var-file="terraform.tfvars"
+      run: terraform destroy -auto-approve -var-file="terraform.tfvars"
